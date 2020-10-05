@@ -10,6 +10,7 @@ import session from "express-session";
 import { Resources } from "./resourceLookup";
 
 // Load environment variables from .env file, where API keys and passwords are configured
+process.env.DATABASE_URL = "postgresql://localhost:5432";
 dotenv.config({ path: ".env" });
 
 // Create Express server
