@@ -1,0 +1,47 @@
+<html>
+
+<head>
+	<title>Main Menu</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" type="text/css" href="/styles/master.css">
+
+	<script type="text/javascript" src="/scripts/master.js" defer></script>
+	<script type="text/javascript" src="/scripts/mainMenu.js" defer></script>
+</head>
+
+<body>
+
+	<div class="header">
+		<h1 class="primary-message">Main Menu</h1>
+	</div>
+		
+	<div id="main" class="main">
+		<div id="error" <% if (!locals.errorMessage || (locals.errorMessage === "")) { %> class="hidden" <% } %>>
+			<h4 id="errorMessage" class="error-message">
+				<% if (locals.errorMessage && (locals.errorMessage !== "")) { %>
+					<%= locals.errorMessage %>
+				<% } %>
+			</h4>
+		</div>
+        <button type="button" class="action" id="startTrans">Start Transaction</button>
+		<button type="button" class="action" id="viewProducts">View Products</button>
+		<div>
+				<% if(locals.isElevatedUser) { %>
+					<button type="button" class="action" id="newEmployee">Create Employee</button>
+        			<button type="button" class="action" id="salesReport">Sales Report</button>
+        			<button type="button" class="action" id="cashierReport">Cashier Report</button>
+				<% } %>
+		</div>
+		<button type="submit" id="signout" name="signout" onsubmit="signOutActionClickHandler();">
+
+			<img id="signOut" src="../assets/eject-24px.svg" alt="sign out">
+		</button>
+        
+        
+    </div>
+        
+        
+        
+   </body>
+   </html>

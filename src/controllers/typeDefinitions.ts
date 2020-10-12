@@ -44,6 +44,11 @@ export interface PageResponse {
 	errorMessage?: string;
 }
 
+export interface MainMenuPageResponse {
+	isElevatedUser: boolean;
+	errorMessage?: string;
+}
+
 export interface ProductDetailPageResponse extends PageResponse {
 	product: Product;
 	isElevatedUser: boolean;
